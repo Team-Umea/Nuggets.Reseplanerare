@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchInformationApi } from "../api/Api";
+import '../styles/Home.css'
 
 function HomePage() {
   const [information, setInformation] = useState([]);
@@ -14,12 +15,18 @@ function HomePage() {
 
   return (
     <div>
-      <h1>Hem</h1>
+      <h2 className="webTitle">Välkommen till Reseplaneraren</h2>
+      <p className="titleText">Detta är en sida som kan hjälpa dig att organisera dina framtida drömmar och resor. Samt hitta insperation till potentiella drömresor!</p>
+
       <ul>
         {information.map((location, index) => (
-          <li key={index}>
-            {location.activity},{location.location},{location.image}
-          </li>
+          <div className="infoContainer" key={index}>
+            <img src={location.url} alt="Bild på resmål" className="infoImg"/>
+            <h3 className="infoLocation">{location.location}</h3>
+            <p className="infoActivity">{location.activity}</p>
+
+
+          </div>
         ))}
       </ul>
     </div>
@@ -27,3 +34,4 @@ function HomePage() {
 }
 
 export default HomePage;
+
