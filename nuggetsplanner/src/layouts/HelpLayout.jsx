@@ -4,8 +4,8 @@ function HelpLayout() {
     return ( 
         <>
         <nav className="help">
-            <NavLink to="/help/faq">FAQ</NavLink>
-            <NavLink to="/help/contact">Kontakt</NavLink>
+            <NavLink to="faq">FAQ</NavLink>
+            <NavLink to="contact">Kontakt</NavLink>
         </nav>
         <main>
          <Outlet />
