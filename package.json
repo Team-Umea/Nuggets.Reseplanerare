@@ -2,5 +2,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "react-router-dom": "^7.1.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
