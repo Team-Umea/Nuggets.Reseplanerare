@@ -1,11 +1,19 @@
 import PropTypes from "prop-types";
 import DateInput from "./DateInput";
 
-const handleClick = (e)=>{
-e.preventDefault()
-const newTravel = {land,city,date,activity};
-addTravel(newTravel)
-}
+//PropTypes
+TravelForm.propTypes = {
+  addTravel: PropTypes.func.isRequired,
+  land: PropTypes.string.isRequired,
+  setLand: PropTypes.func.isRequired,
+  city: PropTypes.string.isRequired,
+  setCity: PropTypes.func.isRequired,
+  date: PropTypes.string.isRequired,
+  setDate: PropTypes.func.isRequired,
+  activity: PropTypes.string.isRequired,
+  setActivity: PropTypes.func.isRequired,
+};
+
 function TravelForm({
   addTravel,
   land,
