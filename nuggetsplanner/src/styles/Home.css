@@ -1,0 +1,51 @@
+/* Grundläggande stil för hela sidan */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Stil för huvudrubriken */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Stil för listan i grid-layout med 3 kolumner */
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Skapar 3 lika kolumner */
+    gap: 20px; /* Avstånd mellan grid-elementen */
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Container för varje informationsblock */
+.infoContainer {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+/* Stil för bilder */
+.infoImg {
+    width: 100%; /* Gör bilden responsiv */
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* Stil för platsrubriken */
+.infoLocation {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #007BFF; /* Justera färgen som du vill */
+}
+
+/* Stil för aktivitetsbeskrivningen */
+.infoActivity {
+    color: #555;
+}

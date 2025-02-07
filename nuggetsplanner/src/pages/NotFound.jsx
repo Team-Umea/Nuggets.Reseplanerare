@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
+import '../styles/NotFound.css';
 
 export default function NotFound() {
     return (
-        <div>
-            <h2>Hoppsan, sidan hittades inte!</h2>
-            <p>Sidan du försökte nå finns inte.</p>
-            <p>Gå tillbaka till <Link to="/">Hem</Link></p>
+        <div className="error-container">
+            <div className="error-message">
+                <h2 className="error-title">Hoppsan, sidan hittades inte!</h2>
+                <p className="error-description">Sidan du försökte nå finns inte.</p>
+                <p className="back-home">
+                    Gå tillbaka till <Link to="/" className="home-link">Hem</Link>
+                </p>
+            </div>
         </div>
-    )
+    );
 }
