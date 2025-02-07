@@ -5,7 +5,7 @@ const handleClick = (e)=>{
 e.preventDefault()
 const newTravel = {land,city,date,activity};
 addTravel(newTravel)
-
+}
 function TravelForm({
   addTravel,
   land,
