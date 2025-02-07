@@ -1,12 +1,11 @@
-import { Outlet } from "react-router-dom"
+import AddTrip from "../components/travelform/AddTrip";
 
 function TripDetails() {
-    return ( 
-        <>
-        <h1>Resor</h1>
-        <Outlet/>
-        </>
-     );
+    return (
+        <div>
+            <AddTrip></AddTrip>
+        </div>
+      );
 }
 
 export default TripDetails;
