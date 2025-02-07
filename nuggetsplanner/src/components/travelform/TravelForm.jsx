@@ -1,49 +1,79 @@
-import { useState,useEffect } from "react";
-function TravelForm({addTravel,land,setLand,city,setCity,date,setDate,activity,setActivity}) {
+import PropTypes from "prop-types";
+import DateInput from "./DateInput";
+function TravelForm({
+  addTravel,
+  land,
+  setLand,
+  city,
+  setCity,
+  date,
+  setDate,
+  activity,
+  setActivity,
+}) {
+  const handleClick = (e) => {
+    e.preventDefault();
+    addTravel({ activity, land, date, city });
 
-const handleClick = (e)=>{
-e.preventDefault()
-addTravel({ activity, land, date, city });
+    setActivity("");
+    setCity("");
+    setLand("");
+    setDate("");
+  };
 
-setActivity("");
-setCity("");
-setLand("");
-setDate("");
+  return (
+    <form onSubmit={handleClick}>
+      <input
+        type="text"
+        placeholder="Land"
+        value={land}
+        onChange={(e) => {
+          setLand(e.target.value);
+        }}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Stad"
+        value={city}
+        onChange={(e) => {
+          setCity(e.target.value);
+        }}
+        required
+      />
+      <DateInput
+        type="date"
+        value={date}
+        onChange={(e) => {
+          setDate(e.target.value);
+        }}
+        required
+      />
+      <input
+        type="text"
+        placeholder="aktivitet"
+        value={activity}
+        onChange={(e) => {
+          setActivity(e.target.value);
+        }}
+        required
+      />
+      <button onSubmit={handleClick}>lägg till resa</button>
+    </form>
+  );
 }
 
-    return (
-<form onSubmit={handleClick}>
-    <input type="text" 
-    placeholder="Land" 
-    value={land} 
-    onChange={(e)=>{
-        setLand(e.target.value)
-        
-    }}required />
-    <input type="text" 
-    placeholder="Stad" 
-    value={city}
-    onChange={(e)=>{
-        setCity(e.target.value)
-       
-    }}required/>
-    <input type="date"
-     value={date}
-     onChange={(e)=>{
-         setDate(e.target.value)
-         
-    }}required />
-    <input type="text"
-     placeholder="aktivitet"
-     value={activity}
-     onChange={(e)=>{
-         setActivity(e.target.value)
-        
-        }}required/>
-    <button onSubmit={handleClick}>lägg till resa</button>
-
-</form>
-      );
-}
+//PropTypes
+TravelForm.propTypes = {
+  addTravel: PropTypes.func.isRequired,
+  land: PropTypes.string.isRequired,
+  setLand: PropTypes.func.isRequired,
+  city: PropTypes.string.isRequired,
+  setCity: PropTypes.func.isRequired,
+  date: PropTypes.string.isRequired,
+  setDate: PropTypes.func.isRequired,
+  activity: PropTypes.string.isRequired,
+  setActivity: PropTypes.func.isRequired,
+};
 
 export default TravelForm;
