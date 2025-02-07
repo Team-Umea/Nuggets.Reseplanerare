@@ -1,5 +1,19 @@
 import PropTypes from "prop-types";
 import DateInput from "./DateInput";
+
+//PropTypes
+TravelForm.propTypes = {
+  addTravel: PropTypes.func.isRequired,
+  land: PropTypes.string.isRequired,
+  setLand: PropTypes.func.isRequired,
+  city: PropTypes.string.isRequired,
+  setCity: PropTypes.func.isRequired,
+  date: PropTypes.string.isRequired,
+  setDate: PropTypes.func.isRequired,
+  activity: PropTypes.string.isRequired,
+  setActivity: PropTypes.func.isRequired,
+};
+
 function TravelForm({
   addTravel,
   land,
@@ -62,18 +76,5 @@ function TravelForm({
     </form>
   );
 }
-
-//PropTypes
-TravelForm.propTypes = {
-  addTravel: PropTypes.func.isRequired,
-  land: PropTypes.string.isRequired,
-  setLand: PropTypes.func.isRequired,
-  city: PropTypes.string.isRequired,
-  setCity: PropTypes.func.isRequired,
-  date: PropTypes.string.isRequired,
-  setDate: PropTypes.func.isRequired,
-  activity: PropTypes.string.isRequired,
-  setActivity: PropTypes.func.isRequired,
-};
 
 export default TravelForm;
