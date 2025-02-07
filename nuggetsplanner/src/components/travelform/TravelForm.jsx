@@ -3,7 +3,8 @@ function TravelForm({addTravel,land,setLand,city,setCity,date,setDate,activity,s
 
 const handleClick = (e)=>{
 e.preventDefault()
-addTravel({ activity, land, date, city });
+const newTravel = {land,city,date,activity};
+addTravel(newTravel)
 
 setActivity("");
 setCity("");

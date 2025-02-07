@@ -1,5 +1,6 @@
 import AddTrip from "../components/travelform/AddTrip";
 
+
 function TripDetails() {
     return (
         <div>

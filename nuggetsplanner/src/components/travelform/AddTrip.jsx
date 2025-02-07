@@ -2,9 +2,10 @@
 import { useState,useEffect } from "react";
 import TravelForm from "./TravelForm";
 import RenderTravelForm from "./RenderTravelForm";
+import useLocalStorage from "../../useLocalStorage";
 
 function AddTrip() {
-const [travels,setTravels]=useState([])
+const [travels, setTravels] = useLocalStorage("travels", []);
 const [land,setLand]= useState("");
 const [city,setCity]= useState("");
 const [date,setDate]= useState("");
