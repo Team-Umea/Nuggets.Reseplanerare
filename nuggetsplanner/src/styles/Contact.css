@@ -39,7 +39,7 @@ body {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: white;
+    color: rgb(27, 27, 27);
   }
   
   .form-group input,
@@ -80,7 +80,7 @@ body {
   }
   
   .submit-button:hover {
-    background-color: black;
+    background-color: #646cff;
     color: white;
   }
   

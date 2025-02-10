@@ -7,7 +7,7 @@ RenderTravelForm.propTypes = {
 function RenderTravelForm({ travels }) {
   return (
     <div>
-      <h2>Rese Detaljer</h2>
+      <h2>Resedetaljer</h2>
       <ul>
         {travels.map((travel, index) => (
           <li key={index}>

@@ -28,7 +28,7 @@ function Contact() {
            <h2>Kontakta Oss</h2>
            <form className='contact-form' onSubmit={handleSubmit}>
             <div className='form-group'>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Namn</label>
                 <input
                     type="text"
                     id="name"

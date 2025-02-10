@@ -65,14 +65,14 @@ function TravelForm({
       />
       <input
         type="text"
-        placeholder="aktivitet"
+        placeholder="Aktivitet"
         value={activity}
         onChange={(e) => {
           setActivity(e.target.value);
         }}
         required
       />
-      <button onSubmit={handleClick}>lägg till resa</button>
+      <button onSubmit={handleClick}>Lägg till resa</button>
     </form>
   );
 }
