@@ -1,3 +1,9 @@
+import PropTypes from "prop-types";
+
+RenderTravelForm.propTypes = {
+  travels: PropTypes.func.isRequired
+}
+
 function RenderTravelForm({ travels }) {
   return (
     <div>
