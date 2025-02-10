@@ -3,7 +3,7 @@ import HelpLayout from "../layouts/HelpLayout";
 function AboutPage() {
     return ( 
         <>
-        <h1>ABOUT!!!</h1>
+        <h2>Om oss</h2>
         <HelpLayout />
         </>
      );
