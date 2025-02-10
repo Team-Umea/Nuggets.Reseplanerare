@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #007BFF;
   }
   
   .form-group {
@@ -39,7 +40,7 @@ body {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: rgb(27, 27, 27);
+    color: white;
   }
   
   .form-group input,
@@ -71,7 +72,7 @@ body {
   .submit-button {
     padding: 10px 15px;
     background-color: white;
-    color: #007BFF;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -82,6 +83,7 @@ body {
   .submit-button:hover {
     background-color: #646cff;
     color: white;
+    font-weight: bold;
   }
   
   .submit-button:active {

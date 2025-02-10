@@ -8,7 +8,6 @@ function HomePage() {
     const fetchData = async () => {
       const data = await fetchInformationApi();
       setInformation(data);
-      console.log(data);
     };
     fetchData();
   }, []);
