@@ -1,27 +1,33 @@
-import { Outlet, NavLink } from "react-router-dom"
-import '../styles/RootLayout.css'
+import { Outlet, NavLink } from "react-router-dom";
+import "../styles/RootLayout.css";
 
 function RootLayout() {
-    return ( <div>
-    <header>
+  return (
+    <div>
+      <header>
         <h1>Reseplaneraren</h1>
         <nav>
-            <ul>
-                <NavLink to="/">Hem</NavLink>
-                <NavLink to="about">Om</NavLink>
-                <NavLink to="tripdetails">Detaljer</NavLink>
-            </ul>
+          <ul>
+            <li>
+              <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Hem</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>Om</NavLink>
+            </li>
+            <li>
+              <NavLink to="/tripdetails" className={({ isActive }) => (isActive ? "active" : "")}>Detaljer</NavLink>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </header>
 
-        <main>
+      <main>
         <Outlet />
-        </main>
+      </main>
 
-        <footer>
-
-        </footer>
-    </div> );
+      <footer></footer>
+    </div>
+  );
 }
 
 export default RootLayout;

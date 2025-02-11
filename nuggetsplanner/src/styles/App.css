@@ -27,7 +27,13 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
+nav a:hover {
+  border: #1a1a1a 1px;
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+nav a.active {
   border: #1a1a1a 1px;
   background-color: #646cff;
   color: #ffffff;
