@@ -1,5 +1,9 @@
+.faq {
+    margin: auto;
+    max-width: 800px;
+}
+
 .faq .question {
-        max-width: 800px;
         background: rgba(0,0,0,0.2);
         padding: 5px 20px;
         border-radius: 4px;

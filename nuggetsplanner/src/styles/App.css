@@ -40,10 +40,14 @@ nav a.active {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+}
+
+main {
+  max-width: 800px;
 }
 
 h1 {
