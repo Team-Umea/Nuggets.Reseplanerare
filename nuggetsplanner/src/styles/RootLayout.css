@@ -1,14 +1,15 @@
 /* Styling för header */
-.root-header {
+/* header {
+    width: 100%;
     background-color: #34495e;
     color: white;
     padding: 20px;
     text-align: center;
     display: flex;
-}
+} */
 
 /* Styling för nav och lista */
-.root-nav ul {
+nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -16,6 +17,6 @@
     margin: 20px 0;
 }
 
-.root-nav li {
+nav ul li {
     margin: 0 15px;
 }
