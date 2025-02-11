@@ -12,3 +12,4 @@ export async function fetchInformationApi() {
     console.error("fel som vi ska lägga in sen");
   }
 }
+
