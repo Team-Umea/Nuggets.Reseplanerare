@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
 import DateInput from "./DateInput";
+import { fetchWeatherApi } from "../../api/Api";
+import { fetchPictureApi } from "../../api/Api";
+const getPictureUrl = (pictureData) => {
+  const { farm, server, id, secret } = pictureData;
+  return `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
+};
 
 //PropTypes
 TravelForm.propTypes = {
@@ -25,9 +31,23 @@ function TravelForm({
   activity,
   setActivity,
 }) {
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    addTravel({ activity, land, date, city });
+    const weatherData = await fetchWeatherApi(city);
+    const pictureData = await fetchPictureApi(city);
+    const pictureUrl = getPictureUrl(pictureData);
+    addTravel({
+      activity,
+      land,
+      date,
+      city,
+      weatherData,
+      pictureData,
+      PictureUrl: pictureUrl,
+    });
+    console.log(weatherData);
+    console.log(pictureData);
+    console.log(pictureUrl);
 
     setActivity("");
     setCity("");

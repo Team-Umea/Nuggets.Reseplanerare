@@ -5,6 +5,8 @@ RenderTravelForm.propTypes = {
   travels: PropTypes.array.isRequired,
   removeTravel: PropTypes.func.isRequired,
   openEditModal: PropTypes.func.isRequired
+RenderTravelForm.propTypes = {
+  travels: PropTypes.func.isRequired,
 };
 
 function RenderTravelForm({ travels, removeTravel, openEditModal }) {
@@ -23,6 +25,11 @@ function RenderTravelForm({ travels, removeTravel, openEditModal }) {
               <button className="edit-btn" title="Redigera" onClick={() => openEditModal(index)}>✏️</button>
               <button className="delete-btn" title="Ta bort" onClick={() => removeTravel(index)}>🗑️</button>
             </div>
+          <li key={index}>
+            {travel.land}, {travel.city}, {travel.date}, {travel.activity},
+            {travel.weatherData.temperature},{travel.weatherData.description},
+            {travel.weatherData.wind_speed},{travel.pictureData.farm}
+            <img src={travel.PictureUrl} alt={`Bild av ${travel.city}`} />
           </li>
         ))}
       </ul>
