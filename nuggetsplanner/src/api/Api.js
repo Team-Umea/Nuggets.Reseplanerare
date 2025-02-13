@@ -23,7 +23,7 @@ export async function fetchWeatherApi(query) {
     }
     const data = await response.json();
     return {
-      temperature: data.main.temp,
+      temperature: data.main.temp.toFixed(0),
       feels_like: data.main.feels_like,
       description: data.weather[0].description,
       wind_speed: data.wind.speed,
@@ -48,4 +48,3 @@ export async function fetchPictureApi(query) {
     console.error(error, "du har error");
   }
 }
-
