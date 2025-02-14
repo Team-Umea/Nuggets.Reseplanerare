@@ -9,8 +9,6 @@ RenderTravelForm.propTypes = {
 };
 
 function RenderTravelForm({ travelItems, openEditModal, handleRemoveTravel }) {
-  console.log("Travels:", travelItems); // Debugging
-
   return (
     <div className="travel-container">
       <h2>Resedetaljer</h2>

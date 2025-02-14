@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { editTravel } from "../../store/travelSlice";
+import "../../styles/EditTravelModal.css";
 
 function EditTravelModal({ travel, closeEditModal }) {
   const dispatch = useDispatch();
