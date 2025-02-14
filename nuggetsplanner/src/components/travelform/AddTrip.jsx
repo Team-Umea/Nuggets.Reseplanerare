@@ -26,11 +26,11 @@ function AddTrip() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const handleRemoveTravel = (index) => {
-    dispatch(removeTravel(index)); // Skickar rätt index till removeTravel action
+    dispatch(removeTravel(index));
   };
 
   const openEditModal = (index) => {
-    setSelectedTravel({ ...travelItems[index], index }); // Sparar även index
+    setSelectedTravel({ ...travelItems[index], index });
     setIsEditModalOpen(true);
   };
 
