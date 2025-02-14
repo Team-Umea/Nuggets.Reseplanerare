@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "concurrently \"vite --host\" \"json-server --watch db.json --port 5000\"",
     "build": "vite build",
     "lint": "eslint .",

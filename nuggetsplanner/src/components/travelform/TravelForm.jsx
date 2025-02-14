@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import DateInput from "./DateInput";
-import { fetchWeatherApi } from "../../api/Api";
-import { fetchPictureApi } from "../../api/Api";
-const getPictureUrl = (pictureData) => {
-  const { farm, server, id, secret } = pictureData;
-  return `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
-};
+// import { fetchWeatherApi } from "../../api/Api";
+// import { fetchPictureApi } from "../../api/Api";
+// const getPictureUrl = (pictureData) => {
+//   const { server, id, secret } = pictureData;
+//   return `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
+// };
 
 //PropTypes
 TravelForm.propTypes = {
@@ -33,21 +33,21 @@ function TravelForm({
 }) {
   const handleClick = async (e) => {
     e.preventDefault();
-    const weatherData = await fetchWeatherApi(city);
-    const pictureData = await fetchPictureApi(city);
-    const pictureUrl = getPictureUrl(pictureData);
+    // const weatherData = await fetchWeatherApi(city);
+    // const pictureData = await fetchPictureApi(city);
+    // const pictureUrl = getPictureUrl(pictureData);
     addTravel({
       activity,
       land,
       date,
       city,
-      weatherData,
-      pictureData,
-      PictureUrl: pictureUrl,
+      // weatherData,
+      // pictureData,
+      // PictureUrl: pictureUrl,
     });
-    console.log(weatherData);
-    console.log(pictureData);
-    console.log(pictureUrl);
+    // console.log(weatherData);
+    // console.log(pictureData);
+    // console.log(pictureUrl);
 
     setActivity("");
     setCity("");
