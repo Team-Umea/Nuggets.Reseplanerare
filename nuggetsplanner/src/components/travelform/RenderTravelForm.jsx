@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "../../styles/RenderTravelForm.css";
 
 RenderTravelForm.propTypes = {
-  travels: PropTypes.array,
+  travelItems: PropTypes.any,
   removeTravel: PropTypes.func,
   openEditModal: PropTypes.func,
 };
@@ -37,7 +37,7 @@ function RenderTravelForm({ travelItems, removeTravel, openEditModal }) {
               <p>
                 <strong>Bild:</strong>
               </p>
-              <img src={travel.PictureUrl} alt={`Bild av ${travel.city}`} />
+              <img src={travel.pictureUrl} alt={`Bild av ${travel.city}`} />
             </div>
             <div className="travel-buttons">
               <button

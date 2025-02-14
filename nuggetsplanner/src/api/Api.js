@@ -1,6 +1,7 @@
 const baseUrl = "http://localhost:5000/information";
 const weatherApiKey = "0a73d2fcce10be83cf6d5529ffe32214";
 const pictureApiKey = "cc4caf6e8173b835f998846ff40cd435";
+
 export async function fetchInformationApi() {
   try {
     const response = await fetch(baseUrl);
@@ -13,15 +14,23 @@ export async function fetchInformationApi() {
     console.error("fel som vi ska lägga in sen", error);
   }
 }
+
 export async function fetchWeatherApi(query) {
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${weatherApiKey}&lang=sv`
     );
+    
     if (!response.ok) {
-      throw new Error("Error");
+      throw new Error(`Fel vid hämtning av väderdata: ${response.statusText}`);
     }
+
     const data = await response.json();
+
+    if (!data.main || !data.weather || !data.wind) {
+      throw new Error("Ofullständig data från väder-API");
+    }
+
     return {
       temperature: data.main.temp.toFixed(0),
       feels_like: data.main.feels_like,
@@ -29,9 +38,11 @@ export async function fetchWeatherApi(query) {
       wind_speed: data.wind.speed,
     };
   } catch (error) {
-    console.error("error", error);
+    console.error("Error in fetching weather data:", error);
+    return null;
   }
 }
+
 
 export async function fetchPictureApi(query) {
   try {
