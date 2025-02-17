@@ -3,7 +3,7 @@ import "../../styles/RenderTravelForm.css";
 
 RenderTravelForm.propTypes = {
   travelItems: PropTypes.any,
-  removeTravel: PropTypes.func,
+  handleRemoveTravel: PropTypes.func,
   openEditModal: PropTypes.func,
 };
 
