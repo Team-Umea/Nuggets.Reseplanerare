@@ -1,29 +1,30 @@
 const baseUrl = "http://localhost:5000/information";
-const weatherApiKey = "0a73d2fcce10be83cf6d5529ffe32214";
+const weatherApiKey = "a73d2fcce10be83cf6d5529ffe32214";
 const pictureApiKey = "cc4caf6e8173b835f998846ff40cd435";
 
-function errorHandle(response) {
+export function errorHandle(response) {
   if (!response.ok) {
+    let errorMessage = "";
     switch (response.status) {
       case 400:
-        console.error("Error 400 - Bad Request");
+        errorMessage = "Error 400 - Bad Request";
         break;
       case 401:
-        console.error("Error 401 - Unauthorized");
+        errorMessage = "Error 401 - Unauthorized";
         break;
       case 403:
-        console.error("Error 403 - Forbidden");
+        errorMessage = "Error 403 - Forbidden";
         break;
       case 404:
-        console.error("Error 404 - Not Found");
+        errorMessage = "Error 404 - Not Found";
         break;
       default:
-        console.error(`Error - Status Code: ${response.status}`);
+        errorMessage = `Error - Status Code: ${response.status}`;
     }
-    throw new Error(`HTTP error! status: ${response.status}`);
+    throw new Error(errorMessage);
   }
   return response;
-}s
+}
 
 export async function fetchInformationApi() {
   try {
@@ -41,7 +42,7 @@ export async function fetchWeatherApi(query) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${weatherApiKey}&lang=sv`
     );
-    
+
     errorHandle(response);
     const data = await response.json();
 
@@ -66,7 +67,7 @@ export async function fetchPictureApi(query) {
     const response = await fetch(
       `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${pictureApiKey}&text=${query}&format=json&nojsoncallback=1`
     );
-    
+
     errorHandle(response);
     const data = await response.json();
 

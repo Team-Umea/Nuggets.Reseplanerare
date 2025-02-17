@@ -41,20 +41,23 @@ function TravelForm({
   setActivity,
 }) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const handleClick = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     const weatherData = await fetchWeatherApi(city);
     const pictureData = await fetchPictureApi(city);
 
-    // Kontrollera att väderdata och bilddata finns
     if (!weatherData) {
+      setError("Kunde inte hämta väderdata försök igen senare");
       console.error("❌ Fel: weatherData är null eller undefined.");
       setLoading(false);
       return;
     }
 
     if (!pictureData) {
+      setError("Kunde inte hämta bilddata försök igen senare");
       console.error("❌ Fel: pictureData är null eller undefined.");
       setLoading(false);
       return;
@@ -120,7 +123,10 @@ function TravelForm({
       <button type="submit" disabled={loading}>
         {loading ? "Laddar..." : "Lägg till resa"}
       </button>
-      {loading && <div className="loader">ta det lugnt, skiten kommer...</div>}{" "}
+      {error && <p style={{ color: "red" }}>{error}</p>} {}
+      {loading && (
+        <div className="loader">ta det lugnt, skiten kommer...</div>
+      )}{" "}
     </form>
   );
 }
