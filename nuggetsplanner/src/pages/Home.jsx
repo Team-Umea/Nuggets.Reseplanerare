@@ -11,7 +11,7 @@ function HomePage() {
     };
     fetchData();
   }, []);
-  const renderdLocations = useMemo(()=>{
+  const renderedLocations = useMemo(()=>{
    return information.map((location, index) => (
       <div className="infoContainer" key={index}>
         <img src={location.url} alt="Bild på resmål" className="infoImg"/>
@@ -28,7 +28,7 @@ function HomePage() {
       <p className="titleText">Detta är en sida som kan hjälpa dig att organisera dina framtida drömmar och resor. Samt hitta insperation till potentiella drömresor!</p>
 
       <ul>
-{renderdLocations}
+{renderedLocations}
       </ul>
     </div>
   );

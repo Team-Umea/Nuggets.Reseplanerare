@@ -2,17 +2,17 @@ import PropTypes from "prop-types";
 import "../../styles/RenderTravelForm.css";
 
 RenderTravelForm.propTypes = {
-  travels: PropTypes.array.isRequired,
-  removeTravel: PropTypes.func.isRequired,
-  openEditModal: PropTypes.func.isRequired,
+  travelItems: PropTypes.any,
+  handleRemoveTravel: PropTypes.func,
+  openEditModal: PropTypes.func,
 };
 
-function RenderTravelForm({ travels, removeTravel, openEditModal }) {
+function RenderTravelForm({ travelItems, handleRemoveTravel, openEditModal }) {
   return (
     <div className="travel-container">
       <h2>Resedetaljer</h2>
       <ul className="travel-list">
-        {travels.map((travel, index) => (
+        {travelItems.map((travel, index) => (
           <li key={index} className="travel-item">
             <div className="travel-info">
               <h3>
@@ -37,7 +37,7 @@ function RenderTravelForm({ travels, removeTravel, openEditModal }) {
               <p>
                 <strong>Bild:</strong>
               </p>
-              <img src={travel.PictureUrl} alt={`Bild av ${travel.city}`} />
+              <img src={travel.pictureUrl} alt={`Bild av ${travel.city}`} />
             </div>
             <div className="travel-buttons">
               <button
@@ -50,7 +50,7 @@ function RenderTravelForm({ travels, removeTravel, openEditModal }) {
               <button
                 className="delete-btn"
                 title="Ta bort"
-                onClick={() => removeTravel(index)}
+                onClick={() => handleRemoveTravel(index)}
               >
                 🗑️
               </button>

@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import DateInput from "./DateInput";
 import { fetchWeatherApi } from "../../api/Api";
 import { fetchPictureApi } from "../../api/Api";
+
 const getPictureUrl = (pictureData) => {
-  const { farm, server, id, secret } = pictureData;
-  return `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
+  if (pictureData && pictureData.server && pictureData.id && pictureData.secret) {
+    return `https://live.staticflickr.com/${pictureData.server}/${pictureData.id}_${pictureData.secret}.jpg`;
+  }
+  return null;
 };
 
 //PropTypes
@@ -33,21 +36,34 @@ function TravelForm({
 }) {
   const handleClick = async (e) => {
     e.preventDefault();
+
     const weatherData = await fetchWeatherApi(city);
+
     const pictureData = await fetchPictureApi(city);
+  
+    // Kontrollera att väderdata och bilddata finns
+    if (!weatherData) {
+      console.error("❌ Fel: weatherData är null eller undefined.");
+      return;
+    }
+  
+    if (!pictureData) {
+      console.error("❌ Fel: pictureData är null eller undefined.");
+      return;
+    }
+  
     const pictureUrl = getPictureUrl(pictureData);
-    addTravel({
+  
+    const newTravel = {
       activity,
       land,
       date,
       city,
       weatherData,
-      pictureData,
-      PictureUrl: pictureUrl,
-    });
-    console.log(weatherData);
-    console.log(pictureData);
-    console.log(pictureUrl);
+      pictureUrl,
+    };
+
+    addTravel(newTravel);
 
     setActivity("");
     setCity("");
