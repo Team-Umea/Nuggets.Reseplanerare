@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
 import DateInput from "./DateInput";
+import { useState } from "react";
 import { fetchWeatherApi } from "../../api/Api";
 import { fetchPictureApi } from "../../api/Api";
 
 const getPictureUrl = (pictureData) => {
-  if (pictureData && pictureData.server && pictureData.id && pictureData.secret) {
+  if (
+    pictureData &&
+    pictureData.server &&
+    pictureData.id &&
+    pictureData.secret
+  ) {
     return `https://live.staticflickr.com/${pictureData.server}/${pictureData.id}_${pictureData.secret}.jpg`;
   }
   return null;
@@ -34,26 +40,28 @@ function TravelForm({
   activity,
   setActivity,
 }) {
+  const [loading, setLoading] = useState(false);
   const handleClick = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const weatherData = await fetchWeatherApi(city);
-
     const pictureData = await fetchPictureApi(city);
-  
+
     // Kontrollera att väderdata och bilddata finns
     if (!weatherData) {
       console.error("❌ Fel: weatherData är null eller undefined.");
+      setLoading(false);
       return;
     }
-  
+
     if (!pictureData) {
       console.error("❌ Fel: pictureData är null eller undefined.");
+      setLoading(false);
       return;
     }
-  
+
     const pictureUrl = getPictureUrl(pictureData);
-  
+
     const newTravel = {
       activity,
       land,
@@ -69,6 +77,7 @@ function TravelForm({
     setCity("");
     setLand("");
     setDate("");
+    setLoading(false);
   };
 
   return (
@@ -108,7 +117,10 @@ function TravelForm({
         }}
         required
       />
-      <button onSubmit={handleClick}>Lägg till resa</button>
+      <button type="submit" disabled={loading}>
+        {loading ? "Laddar..." : "Lägg till resa"}
+      </button>
+      {loading && <div className="loader">ta det lugnt, skiten kommer...</div>}{" "}
     </form>
   );
 }

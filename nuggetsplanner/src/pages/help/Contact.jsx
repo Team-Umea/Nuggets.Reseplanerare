@@ -8,6 +8,8 @@ function Contact() {
         message: ''
     });
 
+    const [submitted, setSubmitted] = useState(false);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -19,8 +21,10 @@ function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('formulär-data skickad: ', formData);
-        alert('Tack för ditt meddelande!');
+        setSubmitted(true)
         setFormData({ name: '', email: '', message: '' });
+
+        setTimeout(() => setSubmitted(false), 5000);
     };
 
     return (
@@ -65,6 +69,8 @@ function Contact() {
             </div>
             <button type="submit" className="submit-button">Skicka Meddelande</button>
             </form> 
+
+            {submitted && <p className='success-message'>Tack för ditt meddelande!</p>}
         </div> 
         
      );
