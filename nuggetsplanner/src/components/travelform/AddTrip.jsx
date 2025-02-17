@@ -14,12 +14,8 @@ function AddTrip() {
   const [date, setDate] = useState("");
   const [activity, setActivity] = useState("");
 
-  const handleAddTravel = () => {
-    dispatch(addTravel({ land, city, date, activity }));
-    setLand("");
-    setCity("");
-    setDate("");
-    setActivity("");
+  const handleAddTravel = (travelData) => {
+    dispatch(addTravel(travelData)); 
   };
 
   const [selectedTravel, setSelectedTravel] = useState(null);
