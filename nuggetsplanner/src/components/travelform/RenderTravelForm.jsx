@@ -16,7 +16,7 @@ function RenderTravelForm({ travelItems, handleRemoveTravel, openEditModal }) {
           <li key={index} className="travel-item">
             <div className="travel-info">
               <h3>
-                {travel.city}, {travel.country}
+                {travel.city}, {travel.land}
               </h3>
               <p>
                 <strong>Datum:</strong> {travel.date}
