@@ -3,11 +3,6 @@ import DateInput from "./DateInput";
 import { fetchWeatherApi } from "../../api/Api";
 import { fetchPictureApi } from "../../api/Api";
 
-// const getPictureUrl = (pictureData) => {
-//   const { server, id, secret } = pictureData;
-//   return `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
-// };
-
 const getPictureUrl = (pictureData) => {
   if (pictureData && pictureData.server && pictureData.id && pictureData.secret) {
     return `https://live.staticflickr.com/${pictureData.server}/${pictureData.id}_${pictureData.secret}.jpg`;
@@ -41,14 +36,10 @@ function TravelForm({
 }) {
   const handleClick = async (e) => {
     e.preventDefault();
-  
-    console.log("Hämtar väderdata för:", city);
+
     const weatherData = await fetchWeatherApi(city);
-    console.log("✅ Hämta väderdata:", weatherData);
-  
-    console.log("Hämtar bilddata för:", city);
+
     const pictureData = await fetchPictureApi(city);
-    console.log("✅ Hämta bilddata:", pictureData);
   
     // Kontrollera att väderdata och bilddata finns
     if (!weatherData) {
@@ -63,7 +54,6 @@ function TravelForm({
   
     const pictureUrl = getPictureUrl(pictureData);
   
-    // 🛠 Skapa nytt objekt och logga det
     const newTravel = {
       activity,
       land,
@@ -72,12 +62,9 @@ function TravelForm({
       weatherData,
       pictureUrl,
     };
-  
-    console.log("🚀 Dispatchar till Redux:", newTravel); // 🔥 Viktig kontroll
-  
+
     addTravel(newTravel);
-  
-    // Töm formuläret
+
     setActivity("");
     setCity("");
     setLand("");

@@ -7,9 +7,6 @@ const travelSlice = createSlice({
   },
   reducers: {
     addTravel: (state, action) => {
-      console.log("✅ Redux får in action.payload:", action.payload);
-    
-      // Säkerställ att både väderdata och bild-URL finns
       const { weatherData, pictureUrl } = action.payload;
     
       if (weatherData && pictureUrl) {
@@ -18,16 +15,12 @@ const travelSlice = createSlice({
           city: action.payload.city,
           date: action.payload.date,
           activity: action.payload.activity,
-          weatherData: weatherData, // Lägg till väderdata här
-          pictureUrl: pictureUrl,   // Lägg till bild-URL här
+          weatherData: weatherData,
+          pictureUrl: pictureUrl,
         });
       } else {
         console.error("Väderdata eller bilddata saknas i action.payload");
-        console.log("Väderdata:", weatherData);
-        console.log("Bild-URL:", pictureUrl);
       }
-    
-      console.log("📌 Redux state efter uppdatering:", state.travels); // Logga state efter uppdatering
     },
 
     removeTravel: (state, action) => {
