@@ -27,7 +27,7 @@ function HomePage() {
       <h2 className="webTitle">Välkommen till Reseplaneraren</h2>
       <p className="titleText">Detta är en sida som kan hjälpa dig att organisera dina framtida drömmar och resor. Samt hitta insperation till potentiella drömresor!</p>
 
-      <ul>
+      <ul className="rendered-locations">
 {renderedLocations}
       </ul>
     </div>

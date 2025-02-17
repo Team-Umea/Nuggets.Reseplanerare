@@ -1,11 +1,15 @@
 .travel-container {
-  max-width: 600px;
+  max-width: 880px;
   margin: auto;
   text-align: center;
 }
 
 .travel-list {
-  list-style: none;
+/* Stil för listan i grid-layout med 3 kolumner */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Skapar 3 lika kolumner */
+  gap: 20px; /* Avstånd mellan grid-elementen */
+  list-style-type: none;
   padding: 0;
 }
 
@@ -24,7 +28,7 @@
 
 .travel-item img {
   height: 200px;
-  width: 300px;
+  width: 350px;
   border-radius: 12px;
 }
 
