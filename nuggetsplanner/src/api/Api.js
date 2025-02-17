@@ -2,16 +2,37 @@ const baseUrl = "http://localhost:5000/information";
 const weatherApiKey = "0a73d2fcce10be83cf6d5529ffe32214";
 const pictureApiKey = "cc4caf6e8173b835f998846ff40cd435";
 
+function errorHandle(response) {
+  if (!response.ok) {
+    switch (response.status) {
+      case 400:
+        console.error("Error 400 - Bad Request");
+        break;
+      case 401:
+        console.error("Error 401 - Unauthorized");
+        break;
+      case 403:
+        console.error("Error 403 - Forbidden");
+        break;
+      case 404:
+        console.error("Error 404 - Not Found");
+        break;
+      default:
+        console.error(`Error - Status Code: ${response.status}`);
+    }
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response;
+}s
+
 export async function fetchInformationApi() {
   try {
     const response = await fetch(baseUrl);
-    if (!response.ok) {
-      throw new Error("Nätverksfel u idiot");
-    }
-    const data = await response.json();
-    return data;
+    errorHandle(response);
+    return await response.json();
   } catch (error) {
-    console.error("fel som vi ska lägga in sen", error);
+    console.error("Fel vid hämtning av information:", error);
+    return null;
   }
 }
 
@@ -21,10 +42,7 @@ export async function fetchWeatherApi(query) {
       `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${weatherApiKey}&lang=sv`
     );
     
-    if (!response.ok) {
-      throw new Error(`Fel vid hämtning av väderdata: ${response.statusText}`);
-    }
-
+    errorHandle(response);
     const data = await response.json();
 
     if (!data.main || !data.weather || !data.wind) {
@@ -43,19 +61,18 @@ export async function fetchWeatherApi(query) {
   }
 }
 
-
 export async function fetchPictureApi(query) {
   try {
     const response = await fetch(
       `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${pictureApiKey}&text=${query}&format=json&nojsoncallback=1`
     );
-    if (!response.ok) {
-      throw new Error("error");
-    }
+    
+    errorHandle(response);
     const data = await response.json();
 
     return data.photos.photo[1];
   } catch (error) {
-    console.error(error, "du har error");
+    console.error("Fel vid hämtning av bild:", error);
+    return null;
   }
 }
