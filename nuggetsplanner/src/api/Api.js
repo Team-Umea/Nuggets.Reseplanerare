@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:5000/information";
-const weatherApiKey = "a73d2fcce10be83cf6d5529ffe32214";
+const weatherApiKey = "0a73d2fcce10be83cf6d5529ffe32214";
 const pictureApiKey = "cc4caf6e8173b835f998846ff40cd435";
 
 export function errorHandle(response) {
