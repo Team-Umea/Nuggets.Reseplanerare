@@ -7,7 +7,7 @@ RenderTravelForm.propTypes = {
   openEditModal: PropTypes.func,
 };
 
-function RenderTravelForm({ travelItems, removeTravel, openEditModal }) {
+function RenderTravelForm({ travelItems, handleRemoveTravel, openEditModal }) {
   return (
     <div className="travel-container">
       <h2>Resedetaljer</h2>
@@ -50,7 +50,7 @@ function RenderTravelForm({ travelItems, removeTravel, openEditModal }) {
               <button
                 className="delete-btn"
                 title="Ta bort"
-                onClick={() => removeTravel(index)}
+                onClick={() => handleRemoveTravel(index)}
               >
                 🗑️
               </button>
