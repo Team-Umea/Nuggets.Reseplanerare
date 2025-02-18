@@ -1,9 +1,10 @@
 .footer {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: rgb(5, 3, 68);;
+    color: #ffffff;
     padding: 2rem 1rem;
     margin-top: 2rem;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    height: 18vh;
   }
   
   .footer-container {
@@ -53,7 +54,7 @@
   }
   
   .footer-social a {
-    color: #333;
+    color: #ffffff;
     transition: color 0.3s;
   }
   

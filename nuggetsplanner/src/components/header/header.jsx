@@ -4,8 +4,8 @@ import icon from "../../assets/Icon.png";
 function Header() {
   return (
     <header>
-      <h1 className="mainH1">Reseplaneraren x2</h1>
       <img className="icon" src={icon} alt="Reseplanerarens Ikon" />
+      <h1 className="mainH1">Reseplaneraren</h1>
       <nav>
         <ul>
           <li>

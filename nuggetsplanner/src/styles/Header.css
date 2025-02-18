@@ -2,9 +2,14 @@
     color: rgb(204, 240, 248);
 }
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
     background-color: rgb(5, 3, 68);
 }
 .icon {
     height: auto;
     width: 200px;
+    border-radius: 50%;
+    scale: 0.6;
 }
