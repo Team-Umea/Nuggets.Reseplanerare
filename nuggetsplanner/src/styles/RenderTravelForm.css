@@ -5,10 +5,9 @@
 }
 
 .travel-list {
-/* Stil för listan i grid-layout med 3 kolumner */
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Skapar 3 lika kolumner */
-  gap: 20px; /* Avstånd mellan grid-elementen */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   list-style-type: none;
   padding: 0;
 }
