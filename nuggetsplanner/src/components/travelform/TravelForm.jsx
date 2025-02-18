@@ -3,6 +3,8 @@ import DateInput from "./DateInput";
 import { useState } from "react";
 import { fetchWeatherApi } from "../../api/Api";
 import { fetchPictureApi } from "../../api/Api";
+import { Loader } from "rizzui";
+import '../../styles/TravelForm.css'
 
 const getPictureUrl = (pictureData) => {
   if (
@@ -50,16 +52,24 @@ function TravelForm({
     const pictureData = await fetchPictureApi(city);
 
     if (!weatherData) {
-      setError("Kunde inte hämta väderdata försök igen senare");
-      console.error("❌ Fel: weatherData är null eller undefined.");
+      setError("Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!");
       setLoading(false);
+    
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
+    
       return;
     }
 
     if (!pictureData) {
-      setError("Kunde inte hämta bilddata försök igen senare");
-      console.error("❌ Fel: pictureData är null eller undefined.");
+      setError("Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!");
       setLoading(false);
+    
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
+    
       return;
     }
 
@@ -125,8 +135,10 @@ function TravelForm({
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>} {}
       {loading && (
-        <div className="loader">ta det lugnt, skiten kommer...</div>
-      )}{" "}
+  <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+    <div className="spinner"></div>
+  </div>
+)}
     </form>
   );
 }
