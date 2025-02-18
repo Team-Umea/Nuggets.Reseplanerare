@@ -1,8 +1,49 @@
-# Nuggets.Reseplanerare
-[https://app.diagrams.net/#G1QRiE1iphMrAKk1patqq6sEtjHT94CvBA#%7B%22pageId%22%3A%226UF7jGTqOyRypg2dN2f3%22%7D](https://drive.google.com/file/d/1QRiE1iphMrAKk1patqq6sEtjHT94CvBA/view?usp=sharing)
-Trello https://trello.com/invite/b/67a228b4a2d98400dab40061/ATTIa4410958e26bac939a349393dfc840a31BDA4027/reseplanerare
+## Reseplaneraren 4.0
 
-cd nuggetsplaner
+Välkommen till Team-Umeås reseplanerare. Här kan du lägga till resor & destinationer. När du utfört resan och är nöjd så kan du ta bort resmålen och lägga till.
+
+## Kom igång!
+
+Klona repot: I din terminal: git clone: https://github.com/Team-Umea/Nuggets.Reseplanerare
+
+Navigera till projektmappen: cd nuggetsplanner
+
 npm install
-npm install react-router-dom
+
 npm run dev
+
+
+## Funktioner/Komponenter:
+
+Header: Header element som visar upp en text och NAV-bar.
+
+Footer: Footer element som visar upp en text och NAV-bar.
+
+Hem: Text som hälsar användaren välkommen och visar insperation.
+
+Om: En hjälpsida om företaget samt undersidor med FAQ och Kontaktformulär.
+
+Detaljer: Lägga till, ändra och ta bort dina framtida drömresor. 
+
+## Planering:
+
+Planering skedde via en uppsatt Trello, planering av komponent-struktr och arkitetering. 
+
+Git-repo och versionshantering med tydliga commits.
+
+
+## Uppbyggnad:
+
+Vi har använt oss av följande lösningar för att optimera och bygga denna sida:
+
+React Router
+API
+JSON.db
+Global state
+Memoization 
+Lazy loading
+Localstorage
+
+
+## Använda appen:
+Öppna en webbläsare och gå till : http://localhost:5175
