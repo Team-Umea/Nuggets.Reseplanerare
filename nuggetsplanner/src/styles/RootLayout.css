@@ -1,0 +1,12 @@
+/* Styling för nav och lista */
+nav ul {
+    margin: 1rem;
+    list-style-type: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}

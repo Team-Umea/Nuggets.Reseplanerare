@@ -1,0 +1,65 @@
+/* Grundläggande stil för hela sidan */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Stil för huvudrubriken */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Stil för listan i grid-layout med 3 kolumner */
+.rendered-locations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Skapar 3 lika kolumner */
+    gap: 80px; /* Ökar avståndet mellan grid-elementen för mer utrymme */
+    list-style-type: none;
+    padding: 0;
+    max-width: 1200px; /* Ställer in en maxbredd för att undvika för stor layout */
+    margin: 0 auto; /* Centrerar grid-layouten */
+    margin-top: 15px;
+}
+
+/* Container för varje informationsblock */
+.infoContainer {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 35px; /* Ökar padding för mer utrymme i containern */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ökar skuggan för mer djup */
+    transition: transform 0.2s;
+    width: 100%; /* Gör containern fullbredd inom sin grid-cell */
+    height: 400px; /* Ställer in en höjd för containern */
+}
+
+.infoContainer:hover {
+    background-color: #e2e2e2; /* Ljusare bakgrundsfärg vid hover */
+    transform: translateY(-5px); /* Liten lyft-effekt */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Större skugga för att ge effekt av djup */
+}
+
+/* Stil för bilder */
+.infoImg {
+    width: 100%; /* Gör bilden responsiv */
+    height: 250px; /* Ökar höjden på bilden för att göra den större */
+    object-fit: cover; /* Ser till att bilden täcker hela utrymmet utan att bli deformerad */
+    border-radius: 8px;
+}
+
+/* Stil för platsrubriken */
+.infoLocation {
+    font-size: 1.8em; /* Ökar storleken på rubriken för mer uppmärksamhet */
+    margin: 15px 0;
+    color: #007BFF; /* Justera färgen som du vill */
+}
+
+/* Stil för aktivitetsbeskrivningen */
+.infoActivity {
+    color: #555;
+    font-size: 1.1em; /* Justera textstorleken för mer läsbarhet */
+}

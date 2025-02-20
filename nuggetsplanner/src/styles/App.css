@@ -1,0 +1,115 @@
+ *{
+  padding:0;
+  margin: 0 auto;
+ }
+
+.light-mode {
+  background-color: aliceblue;
+  color: #1a1a1a;
+}
+
+.dark-mode {
+  background-color: #242424;
+  color: aliceblue;
+}
+
+body {}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  padding: 0.6rem;
+  margin: 1rem;
+  border-radius: 0.4rem;
+  font-weight: bolder;
+  color: #ffffff;
+  background-color: rgb(5, 3, 68);
+  text-decoration: inherit;
+}
+nav a:hover {
+  border: #1a1a1a 1px;
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+nav a.active {
+  border: #1a1a1a 1px;
+  background-color: #646cff;
+  color: #ffffff;
+}
+
+.help {
+  display: flex;
+  justify-content: center;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-p {
+   max-width: 800px;
+}
+
+/*Form*/
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+input, .date-input {
+  width: 100%;
+  padding: 12px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+input:focus, .date-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  background-color: rgb(5, 3, 68);
+  color: aliceblue;
+  font-size: 1rem;
+  border-radius: 12px;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #646cff;
+  color: white;
+}
