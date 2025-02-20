@@ -3,7 +3,6 @@ import DateInput from "./DateInput";
 import { useState } from "react";
 import { fetchWeatherApi } from "../../api/Api";
 import { fetchPictureApi } from "../../api/Api";
-import { Loader } from "rizzui";
 import '../../styles/TravelForm.css'
 
 const getPictureUrl = (pictureData) => {
