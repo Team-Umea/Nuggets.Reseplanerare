@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { fetchInformationApi } from "../api/Api";
 import '../styles/Home.css'
+import Hero from '../components/hero/Hero'
 
 function HomePage() {
   const [information, setInformation] = useState([]);
@@ -24,9 +25,7 @@ function HomePage() {
   },[information])
   return (
     <div>
-      <h2 className="webTitle">Välkommen till Reseplaneraren</h2>
-      <p className="titleText">Detta är en sida som kan hjälpa dig att organisera dina framtida drömmar och resor. Samt hitta insperation till potentiella drömresor!</p>
-
+      < Hero />
       <ul className="rendered-locations">
 {renderedLocations}
       </ul>
