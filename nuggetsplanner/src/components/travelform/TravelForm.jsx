@@ -95,6 +95,7 @@ function TravelForm({
 
   return (
     <form onSubmit={handleClick}>
+      <label htmlFor="land">Land:</label>
       <input
         type="text"
         placeholder="Land"
@@ -104,6 +105,7 @@ function TravelForm({
         }}
         required
       />
+      <label htmlFor="city">Stad:</label>
       <input
         type="text"
         placeholder="Stad"
@@ -113,6 +115,7 @@ function TravelForm({
         }}
         required
       />
+      <label htmlFor="date">Datum:</label>
       <DateInput
         type="date"
         value={date}
@@ -121,6 +124,7 @@ function TravelForm({
         }}
         required
       />
+      <label htmlFor="activity">Aktivitet:</label>
       <input
         type="text"
         placeholder="Aktivitet"

@@ -28,24 +28,28 @@ function EditTravelModal({ travel, closeEditModal }) {
       <div className="modal-content">
         <h2>Redigera resa</h2>
         <form className="modal-form" onSubmit={handleSubmit}>
+        <label htmlFor="land">Land:</label>
           <input
             type="text"
             value={land}
             onChange={(e) => setLand(e.target.value)}
             required
           />
+          <label htmlFor="city">Stad:</label>
           <input
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             required
           />
+          <label htmlFor="date">Datum:</label>
           <DateInput
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
           />
+          <label htmlFor="activity">Aktivitet:</label>
           <input
             type="text"
             value={activity}
