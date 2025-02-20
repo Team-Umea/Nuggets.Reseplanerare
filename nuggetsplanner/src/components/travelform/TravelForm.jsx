@@ -51,34 +51,41 @@ function TravelForm({
     const pictureData = await fetchPictureApi(city);
 
     if (!weatherData) {
-      setError("Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!");
+      setError(
+        "Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!"
+      );
       setLoading(false);
-    
+
       setTimeout(() => {
         setError(null);
       }, 2000);
-    
+
       return;
     }
 
     if (!pictureData) {
-      setError("Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!");
+      setError(
+        "Kunde inte hämta angiven stad. Kontrollera stavning och försök igen!"
+      );
       setLoading(false);
-    
+
       setTimeout(() => {
         setError(null);
       }, 2000);
-    
+
       return;
     }
 
     const pictureUrl = getPictureUrl(pictureData);
-
+    const convertText = (text) => {
+      if (!text) return "";
+      return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    };
     const newTravel = {
-      activity,
-      land,
+      activity: convertText(activity),
+      land: convertText(land),
       date,
-      city,
+      city: convertText(city),
       weatherData,
       pictureUrl,
     };
@@ -138,10 +145,16 @@ function TravelForm({
       </button>
       {error && <p style={{ color: "red" }}>{error}</p>} {}
       {loading && (
-  <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
-    <div className="spinner"></div>
-  </div>
-)}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}
+        >
+          <div className="spinner"></div>
+        </div>
+      )}
     </form>
   );
 }
