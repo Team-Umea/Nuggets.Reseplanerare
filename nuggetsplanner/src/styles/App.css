@@ -3,6 +3,18 @@
   margin: 0 auto;
  }
 
+.light-mode {
+  background-color: aliceblue;
+  color: #1a1a1a;
+}
+
+.dark-mode {
+  background-color: #242424;
+  color: aliceblue;
+}
+
+body {}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

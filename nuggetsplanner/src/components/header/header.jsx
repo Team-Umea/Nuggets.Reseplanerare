@@ -1,6 +1,8 @@
 import "../../styles/Header.css";
 import { NavLink } from "react-router-dom";
 import icon from "../../assets/Icon.png";
+import DarkModeToggle from "../darkmode/darkModeButton"
+
 function Header() {
   return (
     <header>
@@ -34,6 +36,7 @@ function Header() {
           </li>
         </ul>
       </nav>
+      <DarkModeToggle />
     </header>
   );
 }
