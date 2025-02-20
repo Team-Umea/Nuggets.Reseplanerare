@@ -59,7 +59,7 @@ function TravelForm({
 
       setTimeout(() => {
         setError(null);
-      }, 2000);
+      }, 5000);
 
       return;
     }
@@ -72,7 +72,7 @@ function TravelForm({
 
       setTimeout(() => {
         setError(null);
-      }, 2000);
+      }, 5000);
 
       return;
     }
