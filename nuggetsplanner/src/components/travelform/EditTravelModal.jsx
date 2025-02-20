@@ -28,7 +28,7 @@ function EditTravelModal({ travel, closeEditModal }) {
       <div className="modal-content">
         <h2>Redigera resa</h2>
         <form className="modal-form" onSubmit={handleSubmit}>
-        <label htmlFor="land">Land:</label>
+          <label htmlFor="land">Land:</label>
           <input
             disabled
             type="text"
@@ -59,10 +59,10 @@ function EditTravelModal({ travel, closeEditModal }) {
             required
           />
           <div className="modal-btns">
-          <button type="submit">Spara</button>
-          <button type="button" onClick={closeEditModal}>
-            Avbryt
-          </button>
+            <button type="submit">Spara</button>
+            <button type="button" onClick={closeEditModal}>
+              Avbryt
+            </button>
           </div>
         </form>
       </div>
