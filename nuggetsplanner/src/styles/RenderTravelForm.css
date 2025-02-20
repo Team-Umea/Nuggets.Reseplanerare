@@ -25,6 +25,10 @@
   flex-direction: column;
 }
 
+label {
+  font-weight: bolder;
+}
+
 .travel-item img {
   height: 200px;
   width: 350px;
