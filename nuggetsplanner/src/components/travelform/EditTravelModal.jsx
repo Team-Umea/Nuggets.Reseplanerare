@@ -28,8 +28,9 @@ function EditTravelModal({ travel, closeEditModal }) {
       <div className="modal-content">
         <h2>Redigera resa</h2>
         <form className="modal-form" onSubmit={handleSubmit}>
-        <label htmlFor="land">Land:</label>
+          <label htmlFor="land">Land:</label>
           <input
+            disabled
             type="text"
             value={land}
             onChange={(e) => setLand(e.target.value)}
@@ -37,6 +38,7 @@ function EditTravelModal({ travel, closeEditModal }) {
           />
           <label htmlFor="city">Stad:</label>
           <input
+            disabled
             type="text"
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -49,7 +51,7 @@ function EditTravelModal({ travel, closeEditModal }) {
             onChange={(e) => setDate(e.target.value)}
             required
           />
-          <label htmlFor="activity">Aktivitet:</label>
+          <label htmlFor="activity">:</label>
           <input
             type="text"
             value={activity}
@@ -57,10 +59,10 @@ function EditTravelModal({ travel, closeEditModal }) {
             required
           />
           <div className="modal-btns">
-          <button type="submit">Spara</button>
-          <button type="button" onClick={closeEditModal}>
-            Avbryt
-          </button>
+            <button type="submit">Spara</button>
+            <button type="button" onClick={closeEditModal}>
+              Avbryt
+            </button>
           </div>
         </form>
       </div>

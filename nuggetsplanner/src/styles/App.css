@@ -55,6 +55,10 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.about-p {
+   max-width: 800px;
+}
+
 /*Form*/
 form {
   display: flex;
@@ -90,6 +94,7 @@ button {
   border-radius: 12px;
   padding: 1rem;
   border: none;
+  cursor: pointer;
 }
 
 button:hover {
